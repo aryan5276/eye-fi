@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Squishy Toggle Buttons</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<h1> Enable Head Pointer? </h1>
+
+<div class="container">
+  <div class="toggle">
+    <input type="checkbox" id="my-checkbox">
+    <span class="button"></span>
+    <span class="label">✔</span>
+  </div>
+</div>
+
+
+<!-- partial -->
+  <script  src="{{ url_for('static', filename='nav.js') }}"></script>
+
+</body>
+</html>

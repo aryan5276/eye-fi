@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>GestureCon Home</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<a href="https://devpost.com/software/gesturecon" class="logo" target="_blank">
+		<img src="{{ url_for('static', filename='logo-png.png') }}" alt="">
+	</a>
+
+  	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+  	<label for="menu-icon"></label>
+  	<nav class="nav"> 		
+  		<ul class="pt-5">
+  			<li><a href="#">Home</a></li>
+  			<li><a href="{{ url_for('face_auth') }}">Login</a></li>
+  			<li><a href="{{ url_for('nav') }}">Nav Control</a></li>
+  		</ul>
+  	</nav>
+
+  	<div class="section-center">
+  		<h1 class="mb-0">Gesture Con</h1>
+  	</div>
+<!-- partial -->
+  <script  src="{{ url_for('static', filename='index.js')}}"></script>
+
+</body>
+</html>

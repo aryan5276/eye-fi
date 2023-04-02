@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>GestureCon - Gesture Controlled Pointers</title>
+	<link rel="icon" href="{{ url_for('static', filename='logo-png.png') }}" type="image/logo-png.png">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<a href="{{ url_for('index') }}" class="logo" target="_blank">
+		<img src="{{ url_for('static', filename='logo-png.png') }}" alt="">
+	</a>
+
+
+	
+	  <div class="svg-container">
+		<svg viewBox="0 0 202.9 45.5">
+		  <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+			<path d="M6.7,45.5c5.7,0.1,14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+			  c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+			  c9.2,3.6,17.6,4.2,23.3,4H6.7z" />
+		  </clipPath>
+		</svg>
+	  </div>
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<h6 class="mb-0 pb-3"><span>Log In</span><span>Verify OTP</span></h6>
+						<input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+						<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-4 pb-3">Log In</h4>
+											<!-- form 1 -->
+											<form action="/login" method="post">
+												<div class="form-group">
+													<input type="text" name="logname" class="form-style"
+														placeholder="Your Full Name" id="logname" autocomplete="off">
+													<i class="input-icon uil uil-user"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="tel" name="logphone" class="form-style"
+														placeholder="Your Phone Number" id="logphone" autocomplete="off">
+													<i class="input-icon uil uil-dialpad-alt"></i>
+												</div>
+
+												<button type="submit" href="#" class="btn mt-4">Send OTP</button>
+												{% if phone and status and name %}
+												{% if status == 'Approved' %}
+												<h3> Welcome {{ name }} </h3>
+												{% endif %}
+												{% if status != 'Approved' %}
+												<h3> Please try again {{ name }} </h3>
+												{% endif %}
+												{% endif %}
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h4 class="mb-2 pb-2">Verify</h4>
+											<!-- form 2 -->
+											<form action="/verifyform" method="post">
+												<div class="form-group">
+													<input type="password" name="logpass" class="form-style"
+														placeholder="Enter One Time Password" id="logpass"
+														autocomplete="on">
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<button type="submit" href="#" class="btn mt-4">Submit</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./scripts/login.js"></script>
+
+</body>
+
+</html>
